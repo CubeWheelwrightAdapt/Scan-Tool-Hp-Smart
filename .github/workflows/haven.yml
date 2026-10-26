@@ -1,0 +1,29 @@
+name: "Glade"
+run-name: "vermilion"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  seabed:
+    permissions:
+      pages: write
+      contents: read
+      id-token: write
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.island.outputs.page_url }}
+    steps:
+      - name: "Pine"
+        uses: actions/checkout@v6
+      - name: "harbor"
+        uses: actions/configure-pages@v6
+      - name: "ORCHARD"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+      - name: "yucca"
+        id: island
+        uses: actions/deploy-pages@v5
